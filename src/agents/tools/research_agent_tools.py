@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 from pydantic import BaseModel, Field
 from langchain_core.tools import tool
 from asyncddgs import aDDGS
@@ -122,3 +121,6 @@ def think_tool(reflection: str) -> str:
         Confirmation that reflection was recorded for decision-making
     """
     return f"Reflection recorded: {reflection}"
+
+def get_research_agent_tools() -> list:
+    return [websearch, think_tool]
